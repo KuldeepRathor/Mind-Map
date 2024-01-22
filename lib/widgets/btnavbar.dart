@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mind_map/features/home/home_screen.dart';
+import 'package:mind_map/features/profile/profile_screen.dart';
+import 'package:mind_map/features/session/session_screen.dart';
+import 'package:mind_map/model/user_details.dart';
 
 class Btnavbar extends StatefulWidget {
   @override
@@ -11,33 +14,36 @@ class _BtnavbarState extends State<Btnavbar> {
   int _selectedIndex = 0;
   static final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
+    SessionScreen(),
     const Text(
-      'Bookings',
+      'Asessment',
       style: TextStyle(
         fontSize: 35,
         fontWeight: FontWeight.bold,
       ),
     ),
-    const Text(
-      'Assessement',
-      style: TextStyle(
-        fontSize: 35,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
-    const Text(
-      'Profile Page',
-      style: TextStyle(
-        fontSize: 35,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
+    UserPage()
   ];
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    UserDetails.name = "Kuldeep R";
+    UserDetails.bgPhotoUrl =
+        "https://i.pinimg.com/originals/6a/aa/ab/6aaaab354709ef2fa16fbd72299c8f55.jpg";
+    UserDetails.profilePhotoUrl =
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnVVc2VDK5p-WDPdl-BzF5TbI8DwokAdjHU-YU9C4gscDaFgRcWkBJQ35lHYH2SxOlG_s&usqp=CAU";
+    UserDetails.dob = "08/01/2002";
+    UserDetails.location = "Pune";
+    UserDetails.tagLine = "I am a Software Engineer, hehhehhe";
+    UserDetails.profession = "SDE";
   }
 
   @override
