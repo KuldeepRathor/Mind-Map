@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mind_map/features/assessment/assessment_screen.dart';
 import 'package:mind_map/features/home/home_screen.dart';
 
 class Btnavbar extends StatefulWidget {
@@ -10,7 +11,7 @@ class Btnavbar extends StatefulWidget {
 class _BtnavbarState extends State<Btnavbar> {
   int _selectedIndex = 0;
   static final List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),
+    const HomeScreen(),
     const Text(
       'Bookings',
       style: TextStyle(
@@ -18,13 +19,7 @@ class _BtnavbarState extends State<Btnavbar> {
         fontWeight: FontWeight.bold,
       ),
     ),
-    const Text(
-      'Assessement',
-      style: TextStyle(
-        fontSize: 35,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
+    const AssessementScreen(),
     const Text(
       'Profile Page',
       style: TextStyle(
@@ -71,7 +66,7 @@ class _BtnavbarState extends State<Btnavbar> {
                   Icons.videocam_outlined,
                   color: Colors.grey,
                 ),
-                label: 'Wishlist',
+                label: 'Sessions',
               ),
               BottomNavigationBarItem(
                 activeIcon: Icon(
@@ -82,7 +77,7 @@ class _BtnavbarState extends State<Btnavbar> {
                   Icons.chat_bubble_outline,
                   color: Colors.grey,
                 ),
-                label: 'Chat',
+                label: 'Assessement',
               ),
               BottomNavigationBarItem(
                 activeIcon: Icon(
