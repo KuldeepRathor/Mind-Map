@@ -1,12 +1,10 @@
 import 'dart:io';
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:csc_picker/csc_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mind_map/constants.dart';
 import 'package:mind_map/model/user_details.dart';
-import 'package:mind_map/widgets/btnavbar.dart';
 import 'package:mind_map/widgets/button1.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:intl/intl.dart';
@@ -53,7 +51,7 @@ class _EditProfileState extends State<EditProfile> {
         );
       },
     );
-    if (picked != null && picked != selectedDate)
+    if (picked != null && picked != selectedDate) {
       setState(() {
         selectedDate = picked;
         _date = DateTime.fromMicrosecondsSinceEpoch(
@@ -61,6 +59,7 @@ class _EditProfileState extends State<EditProfile> {
         dob.text = DateFormat('dd/MM/yyyy').format(_date); // 12/31/2000,
         UserDetails.dob = dob.text;
       });
+    }
   }
 
   //Photos
@@ -76,7 +75,7 @@ class _EditProfileState extends State<EditProfile> {
     // await _cropImage1(pickedImageFile!.path);
     setState(() {
       if (pickedImageFile != null) {
-        _pickedImage = File(pickedImageFile!.path);
+        _pickedImage = File(pickedImageFile.path);
       }
       isPicked = true;
     });
@@ -94,7 +93,7 @@ class _EditProfileState extends State<EditProfile> {
     );
     setState(() {
       if (pickedImageFile != null) {
-        _pickedImage2 = File(pickedImageFile!.path);
+        _pickedImage2 = File(pickedImageFile.path);
       }
 
       isPicked2 = true;
@@ -126,7 +125,7 @@ class _EditProfileState extends State<EditProfile> {
             child: Column(
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   width: deviceWidth,
                   height: 70,
                   color: Colors.white,
@@ -164,7 +163,7 @@ class _EditProfileState extends State<EditProfile> {
                 Expanded(
                   child: Container(
                     child: SingleChildScrollView(
-                      physics: BouncingScrollPhysics(),
+                      physics: const BouncingScrollPhysics(),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -178,7 +177,8 @@ class _EditProfileState extends State<EditProfile> {
                                   width: deviceWidth,
                                   height: deviceHeight * 0.25,
                                   decoration: BoxDecoration(
-                                    color: Color.fromRGBO(196, 196, 196, 1),
+                                    color:
+                                        const Color.fromRGBO(196, 196, 196, 1),
                                     // image: DecorationImage(
                                     //     image: AssetImage(
                                     //         'assets/images/Rectangle10 (1).png'),
@@ -202,7 +202,7 @@ class _EditProfileState extends State<EditProfile> {
                                           width: 125,
                                           height: 122,
                                           decoration: BoxDecoration(
-                                            color: Color.fromRGBO(
+                                            color: const Color.fromRGBO(
                                                 196, 196, 196, 1),
                                             image: DecorationImage(
                                               image: isPicked
@@ -212,7 +212,8 @@ class _EditProfileState extends State<EditProfile> {
                                                       "${UserDetails.profilePhotoUrl}"),
                                               fit: BoxFit.cover,
                                             ),
-                                            borderRadius: BorderRadius.all(
+                                            borderRadius: const BorderRadius
+                                                .all(
                                                 Radius.elliptical(125, 122)),
                                           ),
                                         ),
@@ -253,7 +254,7 @@ class _EditProfileState extends State<EditProfile> {
                                       _pickImage2();
                                     },
                                     child: Container(
-                                      margin: EdgeInsets.only(
+                                      margin: const EdgeInsets.only(
                                           right: 16, bottom: 60),
                                       width: 35,
                                       height: 35,
@@ -275,11 +276,11 @@ class _EditProfileState extends State<EditProfile> {
                           ),
                           SizedBox(height: deviceHeight * 0.01),
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 16),
+                            padding: const EdgeInsets.symmetric(horizontal: 16),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   'Name',
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
@@ -300,7 +301,7 @@ class _EditProfileState extends State<EditProfile> {
                                   ),
                                 ),
                                 SizedBox(height: deviceHeight * 0.02),
-                                Text(
+                                const Text(
                                   'TagLine',
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
@@ -321,7 +322,7 @@ class _EditProfileState extends State<EditProfile> {
                                   ),
                                 ),
                                 SizedBox(height: deviceHeight * 0.02),
-                                Text(
+                                const Text(
                                   'Profession',
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
@@ -342,7 +343,7 @@ class _EditProfileState extends State<EditProfile> {
                                   ),
                                 ),
                                 SizedBox(height: deviceHeight * 0.02),
-                                Text(
+                                const Text(
                                   'DOB',
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
@@ -360,42 +361,38 @@ class _EditProfileState extends State<EditProfile> {
                                     _selectDate(context);
                                   },
                                   child: Container(
-                                    child: Container(
-                                      padding: EdgeInsets.symmetric(
-                                          vertical: 8, horizontal: 16),
-                                      height: 52,
-                                      decoration: BoxDecoration(
-                                        color: Colors.grey.shade200,
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                        border: Border.all(
-                                            color: Colors.grey, width: 1.0),
-                                      ),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Align(
-                                            alignment: Alignment.centerLeft,
-                                            child: Text(
-                                              UserDetails.dob!,
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.w600),
-                                            ),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 8, horizontal: 16),
+                                    height: 52,
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey.shade200,
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      border: Border.all(
+                                          color: Colors.grey, width: 1.0),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Align(
+                                          alignment: Alignment.centerLeft,
+                                          child: Text(
+                                            UserDetails.dob!,
+                                            style: const TextStyle(
+                                                fontWeight: FontWeight.w600),
                                           ),
-                                          Align(
-                                              alignment: Alignment.centerRight,
-                                              child:
-                                                  Icon(Icons.calendar_today)),
-                                        ],
-                                      ),
+                                        ),
+                                        const Align(
+                                            alignment: Alignment.centerRight,
+                                            child: Icon(Icons.calendar_today)),
+                                      ],
                                     ),
                                   ),
                                 ),
                                 SizedBox(height: deviceHeight * 0.02),
                                 InkWell(
                                   onTap: () {},
-                                  child: Text(
+                                  child: const Text(
                                     'Location',
                                     textAlign: TextAlign.right,
                                     style: TextStyle(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mind_map/features/assessment/assessment_screen.dart';
 import 'package:mind_map/features/home/home_screen.dart';
 import 'package:mind_map/features/profile/profile_screen.dart';
 import 'package:mind_map/features/session/session_screen.dart';
@@ -13,16 +14,10 @@ class Btnavbar extends StatefulWidget {
 class _BtnavbarState extends State<Btnavbar> {
   int _selectedIndex = 0;
   static final List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),
-    SessionScreen(),
-    const Text(
-      'Asessment',
-      style: TextStyle(
-        fontSize: 35,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
-    UserPage()
+    const HomeScreen(),
+    const SessionScreen(),
+    const AssessmentScreen(),
+    const UserPage()
   ];
 
   void _onItemTapped(int index) {
@@ -77,18 +72,20 @@ class _BtnavbarState extends State<Btnavbar> {
                   Icons.videocam_outlined,
                   color: Colors.grey,
                 ),
-                label: 'Wishlist',
+                label: 'Sessions',
               ),
               BottomNavigationBarItem(
                 activeIcon: Icon(
                   Icons.chat_bubble,
+                  size: 35,
                   color: Color(0xff007FFF),
                 ),
                 icon: Icon(
                   Icons.chat_bubble_outline,
+                  size: 35,
                   color: Colors.grey,
                 ),
-                label: 'Chat',
+                label: 'Assessement',
               ),
               BottomNavigationBarItem(
                 activeIcon: Icon(

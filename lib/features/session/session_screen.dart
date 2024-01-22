@@ -9,7 +9,7 @@ class SessionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    // Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -28,10 +28,10 @@ class SessionScreen extends StatelessWidget {
                   imageDetailsWidth: 450,
                   withHeroAnimation: true,
                   placeholder: Container(
-                    child: Icon(Icons.check),
+                    child: const Icon(Icons.check),
                   ),
                   errorWidget: Container(
-                    child: Icon(Icons.error),
+                    child: const Icon(Icons.error),
                   ),
                   placeholderDetails: Container(),
                 ),
@@ -53,12 +53,12 @@ class SessionScreen extends StatelessWidget {
               padding: const EdgeInsets.only(left: 10, top: 10),
               child: Row(
                 children: [
-                  Text(
+                  const Text(
                     'All Sessions',
                     style:
                         TextStyle(fontWeight: FontWeight.normal, fontSize: 25),
                   ),
-                  SizedBox(width: 2),
+                  const SizedBox(width: 2),
                   IconButton(
                     onPressed: () {},
                     icon: const Icon(

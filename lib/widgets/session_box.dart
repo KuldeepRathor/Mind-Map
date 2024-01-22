@@ -1,7 +1,5 @@
 import 'package:custom_full_image_screen/custom_full_image_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:mind_map/constants.dart';
-import 'package:mind_map/model/user_details.dart';
 
 class SessionBox extends StatelessWidget {
   const SessionBox({
@@ -23,14 +21,14 @@ class SessionBox extends StatelessWidget {
       child: Container(
         width: MediaQuery.of(context).size.width,
         height: 210,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xffa9e6f0),
           borderRadius: BorderRadius.all(Radius.circular(20)),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.only(left: 20, top: 20),
               child: Row(
@@ -46,28 +44,28 @@ class SessionBox extends StatelessWidget {
                     imageDetailsWidth: 450,
                     withHeroAnimation: true,
                     placeholder: Container(
-                      child: Icon(Icons.check),
+                      child: const Icon(Icons.check),
                     ),
                     errorWidget: Container(
-                      child: Icon(Icons.error),
+                      child: const Icon(Icons.error),
                     ),
                     placeholderDetails: Container(),
                   ),
-                  SizedBox(width: 20),
+                  const SizedBox(width: 20),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         name,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
                             color: Colors.black),
                       ),
-                      SizedBox(height: 5),
+                      const SizedBox(height: 5),
                       Text(
                         classs,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontWeight: FontWeight.normal,
                             fontSize: 18,
                             color: Colors.black),
@@ -87,15 +85,15 @@ class SessionBox extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.calendar_month,
                           size: 20,
                           color: Color(0xffD6CCC6),
                         ),
-                        SizedBox(width: 5),
+                        const SizedBox(width: 5),
                         Text(
                           date,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 16),
                         ),
                       ],
@@ -106,15 +104,15 @@ class SessionBox extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.alarm,
                           size: 20,
                           color: Color(0xffD6CCC6),
                         ),
-                        SizedBox(width: 5),
+                        const SizedBox(width: 5),
                         Text(
                           time,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 16),
                         ),
                       ],
@@ -123,7 +121,7 @@ class SessionBox extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -134,22 +132,22 @@ class SessionBox extends StatelessWidget {
                       Container(
                         height: 50,
                         width: 140,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Colors.blue,
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                         ),
                         child: Center(
                           child: Text(
-                          buttonType == '1' ? 'Reschedule' : 'Re-book',
-                            style: TextStyle(
+                            buttonType == '1' ? 'Reschedule' : 'Re-book',
+                            style: const TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 20,
                                 color: Colors.white),
                           ),
                         ),
                       ),
-                      SizedBox(width: 30),
-                      Text(
+                      const SizedBox(width: 30),
+                      const Text(
                         'Join Now',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
