@@ -1,6 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:custom_full_image_screen/custom_full_image_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mind_map/features/profile/edit_profile_page.dart';
 import 'package:mind_map/model/user_details.dart';
@@ -63,7 +61,6 @@ class _UserPageState extends State<UserPage> {
   void initState() {
     super.initState();
 
-    
     // WidgetsBinding.instance!.addPostFrameCallback((_) {
     //   getData();
     // });
