@@ -18,7 +18,8 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   const CircleAvatar(
                     backgroundImage: NetworkImage(
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnVVc2VDK5p-WDPdl-BzF5TbI8DwokAdjHU-YU9C4gscDaFgRcWkBJQ35lHYH2SxOlG_s&usqp=CAU"),
+                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnVVc2VDK5p-WDPdl-BzF5TbI8DwokAdjHU-YU9C4gscDaFgRcWkBJQ35lHYH2SxOlG_s&usqp=CAU",
+                    ),
                     radius: 30,
                   ),
                   const Spacer(),
