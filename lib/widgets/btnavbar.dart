@@ -30,11 +30,10 @@ class _BtnavbarState extends State<Btnavbar> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    UserDetails.name = "Kuldeep R";
     UserDetails.bgPhotoUrl =
         "https://i.pinimg.com/originals/6a/aa/ab/6aaaab354709ef2fa16fbd72299c8f55.jpg";
-    UserDetails.profilePhotoUrl =
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnVVc2VDK5p-WDPdl-BzF5TbI8DwokAdjHU-YU9C4gscDaFgRcWkBJQ35lHYH2SxOlG_s&usqp=CAU";
+    // UserDetails.profilePhotoUrl =
+    //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnVVc2VDK5p-WDPdl-BzF5TbI8DwokAdjHU-YU9C4gscDaFgRcWkBJQ35lHYH2SxOlG_s&usqp=CAU";
     UserDetails.dob = "08/01/2002";
     UserDetails.location = "Pune";
     UserDetails.tagLine = "I am a Software Engineer, hehhehhe";

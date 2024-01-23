@@ -1,6 +1,10 @@
 import 'package:custom_full_image_screen/custom_full_image_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mind_map/features/profile/edit_profile_page.dart';
+import 'package:mind_map/login.dart';
 import 'package:mind_map/model/user_details.dart';
 
 class UserPage extends StatefulWidget {
@@ -107,7 +111,7 @@ class _UserPageState extends State<UserPage> {
               Expanded(
                 child: Container(
                   child: SingleChildScrollView(
-                    physics: BouncingScrollPhysics(),
+                    physics: const BouncingScrollPhysics(),
                     child: Column(
                       children: [
                         Container(
@@ -125,10 +129,10 @@ class _UserPageState extends State<UserPage> {
                                 imageDetailsWidth: 400,
                                 withHeroAnimation: true,
                                 placeholder: Container(
-                                  child: Icon(Icons.check),
+                                  child: const Icon(Icons.check),
                                 ),
                                 errorWidget: Container(
-                                  child: Icon(Icons.error),
+                                  child: const Icon(Icons.error),
                                 ),
                                 placeholderDetails: Container(),
                               ),
@@ -144,10 +148,10 @@ class _UserPageState extends State<UserPage> {
                                   imageDetailsWidth: 450,
                                   withHeroAnimation: true,
                                   placeholder: Container(
-                                    child: Icon(Icons.check),
+                                    child: const Icon(Icons.check),
                                   ),
                                   errorWidget: Container(
-                                    child: Icon(Icons.error),
+                                    child: const Icon(Icons.error),
                                   ),
                                   placeholderDetails: Container(),
                                 ),
@@ -155,11 +159,11 @@ class _UserPageState extends State<UserPage> {
                             ],
                           ),
                         ),
-                        SizedBox(height: 25),
+                        const SizedBox(height: 25),
                         Text(
                           "${UserDetails.name}",
                           textAlign: TextAlign.left,
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Color.fromRGBO(0, 0, 0, 1),
                               fontFamily: 'Lato',
                               fontSize: 20,
@@ -168,11 +172,11 @@ class _UserPageState extends State<UserPage> {
                               fontWeight: FontWeight.bold,
                               height: 1),
                         ),
-                        SizedBox(height: 15),
+                        const SizedBox(height: 15),
                         Text(
                           "${UserDetails.profession}",
                           textAlign: TextAlign.left,
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Color.fromRGBO(0, 0, 0, 1),
                               fontFamily: 'Lato',
                               fontSize: 14,
@@ -181,14 +185,14 @@ class _UserPageState extends State<UserPage> {
                               fontWeight: FontWeight.normal,
                               height: 1),
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         InkWell(
                           onTap: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return EditProfile();
+                                  return const EditProfile();
                                 },
                               ),
                             );
@@ -226,7 +230,7 @@ class _UserPageState extends State<UserPage> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 35),
+                        const SizedBox(height: 35),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16),
                           child: Column(
@@ -237,7 +241,7 @@ class _UserPageState extends State<UserPage> {
                                 children: [
                                   Row(
                                     children: [
-                                      Text(
+                                      const Text(
                                         'Work at:',
                                         textAlign: TextAlign.left,
                                         style: TextStyle(
@@ -249,11 +253,11 @@ class _UserPageState extends State<UserPage> {
                                             fontWeight: FontWeight.normal,
                                             height: 1),
                                       ),
-                                      SizedBox(width: 8),
+                                      const SizedBox(width: 8),
                                       Text(
                                         "${UserDetails.profession}",
                                         textAlign: TextAlign.left,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             color: Color.fromRGBO(0, 0, 0, 1),
                                             fontFamily: 'Lato',
                                             fontSize: 16,
@@ -266,7 +270,7 @@ class _UserPageState extends State<UserPage> {
                                   ),
                                   Row(
                                     children: [
-                                      Text(
+                                      const Text(
                                         'Birthday :',
                                         textAlign: TextAlign.left,
                                         style: TextStyle(
@@ -278,11 +282,11 @@ class _UserPageState extends State<UserPage> {
                                             fontWeight: FontWeight.normal,
                                             height: 1),
                                       ),
-                                      SizedBox(width: 8),
+                                      const SizedBox(width: 8),
                                       Text(
                                         "${UserDetails.dob}",
                                         textAlign: TextAlign.left,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             color: Color.fromRGBO(0, 0, 0, 1),
                                             fontFamily: 'Lato',
                                             fontSize: 16,
@@ -295,7 +299,7 @@ class _UserPageState extends State<UserPage> {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 15),
+                              const SizedBox(height: 15),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -304,7 +308,7 @@ class _UserPageState extends State<UserPage> {
                                     onTap: () {},
                                     child: Row(
                                       children: [
-                                        Text(
+                                        const Text(
                                           'Followed By :',
                                           textAlign: TextAlign.left,
                                           style: TextStyle(
@@ -317,13 +321,13 @@ class _UserPageState extends State<UserPage> {
                                               fontWeight: FontWeight.normal,
                                               height: 1),
                                         ),
-                                        SizedBox(width: 8),
+                                        const SizedBox(width: 8),
                                         Text(
                                           followers == null
                                               ? "0 People"
                                               : '${followers.length} People',
                                           textAlign: TextAlign.left,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               color: Colors.blue,
                                               fontFamily: 'Lato',
                                               fontSize: 16,
@@ -337,7 +341,7 @@ class _UserPageState extends State<UserPage> {
                                   ),
                                   Row(
                                     children: [
-                                      Text(
+                                      const Text(
                                         'Live in :',
                                         textAlign: TextAlign.left,
                                         style: TextStyle(
@@ -349,11 +353,11 @@ class _UserPageState extends State<UserPage> {
                                             fontWeight: FontWeight.normal,
                                             height: 1),
                                       ),
-                                      SizedBox(width: 8),
+                                      const SizedBox(width: 8),
                                       Text(
                                         "${UserDetails.location}",
                                         textAlign: TextAlign.left,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             color: Color.fromRGBO(0, 0, 0, 1),
                                             fontFamily: 'Lato',
                                             fontSize: 16,
@@ -369,11 +373,19 @@ class _UserPageState extends State<UserPage> {
                             ],
                           ),
                         ),
-                        SizedBox(height: 15),
+                        const SizedBox(height: 15),
                       ],
                     ),
                   ),
                 ),
+              ),
+              ElevatedButton(
+                onPressed: () async {
+                  await GoogleSignIn().signOut();
+                  FirebaseAuth.instance.signOut();
+                  Get.to(const Login());
+                },
+                child: const Text("Logout"),
               ),
             ],
           ),

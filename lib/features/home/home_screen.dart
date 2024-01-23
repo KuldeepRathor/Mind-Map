@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mind_map/model/user_details.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,9 +17,10 @@ class HomeScreen extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  const CircleAvatar(
+                  CircleAvatar(
                     backgroundImage: NetworkImage(
-                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnVVc2VDK5p-WDPdl-BzF5TbI8DwokAdjHU-YU9C4gscDaFgRcWkBJQ35lHYH2SxOlG_s&usqp=CAU",
+                      "${UserDetails.profilePhotoUrl}",
+                      // "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnVVc2VDK5p-WDPdl-BzF5TbI8DwokAdjHU-YU9C4gscDaFgRcWkBJQ35lHYH2SxOlG_s&usqp=CAU",
                     ),
                     radius: 30,
                   ),
@@ -42,8 +44,8 @@ class HomeScreen extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              const Text(
-                'Siddharth!',
+              Text(
+                "${UserDetails.name}",
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,

@@ -1,44 +1,26 @@
 {
   "project_info": {
-    "project_number": "728909067160",
-    "project_id": "mind-map-e16d3",
-    "storage_bucket": "mind-map-e16d3.appspot.com"
+    "project_number": "953706873991",
+    "project_id": "mindmap3-3b889",
+    "storage_bucket": "mindmap3-3b889.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:728909067160:android:15968162b1a2d8854d71ed",
+        "mobilesdk_app_id": "1:953706873991:android:c6d142abf5339a5acfe422",
         "android_client_info": {
-          "package_name": "com.example.mind_map"
+          "package_name": "com.example.mind_map3"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "728909067160-i1o5chh3adpmu144pssq8en74dtnphqu.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.mind_map",
-            "certificate_hash": "0801cd7bc39dd0887100b011b4b010c15bdfbd6c"
-          }
-        },
-        {
-          "client_id": "728909067160-l73b999igqjfnchmr88ntf8ad1j4edju.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBip5fC4EP3dEX9zLQPqP2HWJ7MeupQyw8"
+          "current_key": "AIzaSyDIw5yN2X0fKaTk1KOvpjQ7w64VPhzxToU"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "728909067160-l73b999igqjfnchmr88ntf8ad1j4edju.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
